@@ -132,22 +132,32 @@
     </div>
 
     <script>
+
         async function login() {
 
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const message = document.getElementById("message");
+            const username =
+                document.getElementById("username").value;
+
+            const password =
+                document.getElementById("password").value;
+
+            const message =
+                document.getElementById("message");
 
             if (username === "" || password === "") {
+
                 message.style.color = "#d9534f";
+
                 message.textContent =
                     "Please enter username and password.";
+
                 return;
             }
 
             try {
 
                 const response = await fetch("/api/login", {
+
                     method: "POST",
 
                     headers: {
@@ -158,32 +168,35 @@
                         username: username,
                         password: password
                     })
+
                 });
 
                 const data = await response.json();
 
                 if (data.success) {
 
-                    message.style.color = "green";
-                    message.textContent =
-                        "Login successful!";
+                    // Open dashboard after successful login
+                    window.location.href = "dashboard.html";
 
                 } else {
 
                     message.style.color = "#d9534f";
+
                     message.textContent =
                         data.message;
-
                 }
 
             } catch (error) {
 
                 message.style.color = "#d9534f";
+
                 message.textContent =
                     "Unable to connect to server.";
 
             }
+
         }
+
     </script>
 
 </body>
