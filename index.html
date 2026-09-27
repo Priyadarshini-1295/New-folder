@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Renewable Energy Monitoring System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .login-container {
+            width: 380px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #203a43;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-box:focus {
+            border-color: #2c5364;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #203a43;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #2c5364;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #d9534f;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="icon">☀️</div>
+
+        <h1>Renewable Energy</h1>
+        <h1>Monitoring System</h1>
+
+        <p class="subtitle">
+            IoT-Based Energy Monitoring Dashboard
+        </p>
+
+        <input
+            type="text"
+            id="username"
+            class="input-box"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="password"
+            class="input-box"
+            placeholder="Password"
+        >
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+        <p id="message" class="message"></p>
+
+        <div class="footer">
+            Phase 1 • Microgrid Energy Monitoring
+        </div>
+
+    </div>
+
+    <script>
+        function login() {
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if (username === "" || password === "") {
+                message.textContent = "Please enter username and password.";
+                return;
+            }
+
+            message.textContent = "Login system will be connected to authentication.";
+        }
+    </script>
+
+</body>
+</html>
